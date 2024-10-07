@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คุณถูกหลอก</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>คุณถูกหลอก ความจริงแล้วคนฉลาดเขาไม่กด</h1>
+        <p id="warning" onclick="goToImage()">ถ้ากดแล้วคุณจะควายอีกนะ</p>
+        <p id="count">จำนวนที่ถูกหลอก: <span id="fakeCount">0</span></p>
+        <p id="smartCount">จำนวนคนฉลาดที่ดูเว็บไซต์: <span id="smartCountValue">0</span></p>
+    </div>
+
+    <script>
+        let fakeCount = localStorage.getItem('fakeCount') ? parseInt(localStorage.getItem('fakeCount')) : 0;
+        let smartCount = localStorage.getItem('smartCount') ? parseInt(localStorage.getItem('smartCount')) : 0;
+
+        function goToImage() {
+            fakeCount++;
+            localStorage.setItem('fakeCount', fakeCount);
+            document.getElementById('fakeCount').innerText = fakeCount;
+
+            // ย้ายไปที่ URL ที่กำหนด
+            window.location.href = 'https://th.bing.com/th/id/R.70049e9fb7ffc3275cd6dec11e061ce3?rik=WR4gJAsc2bJXZg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-ufi1FTh1PJc%2fVIgjiHDvBII%2fAAAAAAAAABo%2ftDsC6V7a3iI%2fs1600%2fIMG_1265.JPG&ehk=0cH3pR%2fqPwgoP6GRXBhbZfPLexhxEmdYyQqKhpRXNMc%3d&risl=&pid=ImgRaw&r=0';
+        }
+
+        // เพิ่มจำนวนคนฉลาดที่ดูเว็บไซต์
+        smartCount++;
+        localStorage.setItem('smartCount', smartCount);
+        document.getElementById('smartCountValue').innerText = smartCount;
+
+        // แสดงจำนวนการถูกหลอกในหน้า
+        document.getElementById('fakeCount').innerText = fakeCount;
+    </script>
+</body>
+</html>

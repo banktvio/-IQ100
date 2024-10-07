@@ -1,0 +1,29 @@
+body {
+    background-color: #f0f0f0; /* สีเทา */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้เต็มจอ */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: black; /* สีดำ */
+    font-size: 24px; /* ขนาดกลาง */
+}
+
+#warning {
+    color: black; /* สีดำ */
+    font-size: 20px; /* ขนาดกลาง */
+    cursor: pointer; /* แสดงให้เห็นว่าสามารถคลิกได้ */
+}
+
+#count, #smartCount {
+    margin-top: 20px;
+    font-size: 18px; /* ขนาดกลาง */
+}
